@@ -1,0 +1,1 @@
+var metricsBoardApp = angular.module('metrics-board', []);

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EP Metrics Board</title>
+
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <link href="../css/libs/material/material.min.css" rel="stylesheet">
+    <link href="../css/libs/material/material-wfont.min.css" rel="stylesheet">
+    <link href="../css/libs/material/ripples.min.css" rel="stylesheet">
+</head>
+<body ng-app="metrics-board">
+<table class="table table-striped table-hover" ng-controller="BoardController">
+    <tbody>
+    <tr>
+        <td>CI</td>
+        <td ng-if="project.ciExists">
+            <i class="mdi-action-done icon-material-teal" />
+        </td>
+        <td ng-if="!project.ciExists">None</td>
+    </tr>
+    <tr>
+        <td>CI Status</td>
+        <td>{{ project.status }}</td>
+    </tr>
+    <tr>
+        <td>Build Time (min)</td>
+        <td ng-if="!project.ciExists">None</td>
+        <td ng-if="project.buildTime < 4">{{ project.buildTime }} <i class="mdi-action-trending-up icon-material-teal" /></td>
+        <td ng-if="project.buildTime >= 4">{{ project.buildTime }} <i class="mdi-action-trending-down icon-material-red" /></td>
+    </tr>
+    <tr>
+        <td>Unit Tests (%)</td>
+        <td ng-if="project.unitTestsCoverage >= 80">{{ project.unitTestsCoverage }} <i class="mdi-action-trending-up icon-material-teal" /></td>
+        <td ng-if="project.unitTestsCoverage < 80">{{ project.unitTestsCoverage }} <i class="mdi-action-trending-down icon-material-red" /></td>
+    </tr>
+    <tr>
+        <td>Num. Locations</td>
+        <td>{{ project.numLocations }}</td>
+    </tr>
+    </tbody>
+</table>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js" />
+
+<script src="../js/libs/material/ripples.min.js"></script>
+<script src="../js/libs/material/material.min.js"></script>
+
+<!-- Angular App -->
+<script src="../js/metrics-board/App.js"></script>
+<script src="../js/metrics-board/controller/BoardController.js"></script>
+
+</body>
+</html>
