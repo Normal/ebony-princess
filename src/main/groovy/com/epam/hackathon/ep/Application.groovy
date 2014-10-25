@@ -13,4 +13,12 @@ class Application {
     static void main(String[] args) {
         SpringApplication.run Application, args
     }
+
+    Application() {
+        Boolean.metaClass.randomizeWithProbability << {
+            Integer prob ->
+                def random = new Random()
+                random.nextInt(99) < prob ? random.nextBoolean() : delegate
+        }
+    }
 }

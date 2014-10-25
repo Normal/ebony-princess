@@ -36,20 +36,22 @@ class ProjectService {
                         name: 'AstralJet',
                         code: 'AstralJet',
                         employers_locations: [
-                                lat: 55.6077115,
-                                lng: 37.5443201,
-                                num: 100,
-                                name: 'spb'
+                                [
+                                        lat: 55.6077115,
+                                        lng: 37.5443201,
+                                        num: 100,
+                                        name: 'spb'
+                                ]
                         ],
                         ep_metrics: [
                                 ciExists: true,
                                 buildTime: '00:10', // 30%
                                 unitTestsCoverage: 80,
-                                buildStatus: true, // 10%
+                                buildStatus: true.randomizeWithProbability(10),
                                 numLocations: 1,
                                 criticalCodeViolations: 0 //  +/- 2
                         ]
                 ]
-        ].find {it.code == code}
+        ].find { it.code == code }
     }
 }

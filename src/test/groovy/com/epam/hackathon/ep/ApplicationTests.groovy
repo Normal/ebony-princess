@@ -11,8 +11,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
 @WebAppConfiguration
 class ApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
+
+    @Test
+    void randomizeBooleanTest() {
+        println false.randomizeWithProbability(10)
+    }
 
 }
