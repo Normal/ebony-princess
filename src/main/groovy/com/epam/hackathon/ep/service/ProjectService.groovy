@@ -24,6 +24,12 @@ class ProjectService {
                         code: 'AstralJet',
                         lat: 55.6077115,
                         lng: 37.5443201
+                ],
+                [
+                        status: 'red',
+                        code: 'Oakley',
+                        lat: 41.9100711,
+                        lng: 12.5359979
                 ]
         ]
     }
@@ -61,11 +67,11 @@ class ProjectService {
                                 unitTestsCoverage: 80,
                                 buildStatus: true.randomizeWithProbability(10),
                                 numLocations: 3,
-                                criticalCodeViolations: 0.randomizeViolations(2)
+                                criticalCodeViolations: 0
                         ]
                 ],
                 [
-                        status: 'red',
+                        status: 'green',
                         name: 'ВТБ',
                         code: 'VTB24',
                         employers_locations: [
@@ -76,27 +82,49 @@ class ProjectService {
                                         name: 'Тольятти'
                                 ],
                                 [
-                                        lat: 54.6156309,
-                                        lng: 39.7386032,
-                                        nam: 20,
-                                        name: 'Рязань'
+                                        lat: 55.6077115,
+                                        lng: 37.5443201,
+                                        num: 100,
+                                        name: 'St.Petersburg'
                                 ],
                                 [
                                         lat: 50.3413413,
                                         lng: 30.5129543,
-                                        nam: 15,
+                                        num: 15,
                                         name: 'Київ'
                                 ]
                         ],
                         ep_metrics: [
                                 ciExists: true,
                                 buildTime: '01:10'.randomizeBuildDate(),
-                                unitTestsCoverage: 18,
+                                unitTestsCoverage: 80,
                                 buildStatus: true.randomizeWithProbability(10),
                                 numLocations: 3,
-                                criticalCodeViolations: 0.randomizeViolations(2)
+                                criticalCodeViolations: 1
+                        ]
+                ],
+                [
+                        status: 'gray',
+                        name: 'Oakley',
+                        code: 'Oakley',
+                        employers_locations: [
+                                [
+                                        lat: 55.6077115,
+                                        lng: 37.5443201,
+                                        num: 100,
+                                        name: 'St.Petersburg'
+                                ]
+                        ],
+                        ep_metrics: [
+                                ciExists: false,
+                                buildTime: '15:10'.randomizeBuildDate(),
+                                unitTestsCoverage: 20,
+                                buildStatus: false,
+                                numLocations: 4,
+                                criticalCodeViolations: 60
                         ]
                 ]
+
         ].find { it.code == code }
     }
 }

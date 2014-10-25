@@ -37,9 +37,9 @@ ebonyPrincessApp.controller('Controller', function ($scope, $http) {
             mapOptions);
 
         var lineCoordinates = [
-            new google.maps.LatLng(59.9160703, 30.3543856),
-            new google.maps.LatLng(53.9158179, 27.5930643),
-            new google.maps.LatLng(59.9160703, 30.3543856)
+//            new google.maps.LatLng(59.9160703, 30.3543856),
+//            new google.maps.LatLng(53.9158179, 27.5930643),
+//            new google.maps.LatLng(59.9160703, 30.3543856)
         ];
 
         // Define the symbol, using one of the predefined paths ('CIRCLE')
