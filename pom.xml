@@ -6,7 +6,25 @@
 
     <groupId>ebony-princess</groupId>
     <artifactId>ebony-princess</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>server</module>
+        <module>client</module>
+    </modules>
 
+    <properties>
+        <groovy.version>2.3.7</groovy.version>
+    </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <!--Groovy-->
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>${groovy.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
