@@ -1,3 +1,19 @@
 body {
     background-color: #edfff6;
 }
+.metrics-board-wrapper {
+    width: 300px;
+    position: fixed;
+    z-index: 100;
+    background-color: whitesmoke;
+    right: -300px;
+    min-height: 100%;
+    transition: all 0.5s ease 0s;
+}
+.metrics-board-wrapper--openned {
+    right: 0px;
+}
+
+.navbar--withoutMargin {
+    margin-bottom: 0px;
+}
