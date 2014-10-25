@@ -1,21 +1,35 @@
 
-metricsBoardApp.controller('BoardController', function ($scope) {
+metricsBoardApp.controller('BoardController', function ($scope, $http) {
 
     var greenProject = {
-        ciExists: true,
-        status: 'Building',
-        buildTime: 2,
-        unitTestsCoverage: 80,
-        numLocations: 2
+        status: 'green',
+        name: 'Green Project',
+        code: 'GR-EEN',
+        ep_metrics: {
+            ciExists: true,
+            buildStatus: 'Building',
+            buildTime: 2,
+            unitTestsCoverage: 80,
+            numLocations: 2,
+            criticalCodeViolations: 0
+        }
     }
 
     var redProject = {
-        ciExists: false,
-        status: 'None',
-        buildTime: 'None',
-        unitTestsCoverage: 18,
-        numLocations: 8
+        status: 'green',
+        name: 'Red Project',
+        code: 'RED',
+        ep_metrics: {
+            ciExists: false,
+            buildStatus: 'None',
+            buildTime: 'None',
+            unitTestsCoverage: 18,
+            numLocations: 8,
+            criticalCodeViolations: 7
+        }
     }
 
-    $scope.project = redProject;
+    $http.get('/projects/AstralJet').success(function(data) {
+        $scope.project = data;
+    });
 });

@@ -13,31 +13,47 @@
 <body ng-app="metrics-board">
 <table class="table table-striped table-hover" ng-controller="BoardController">
     <tbody>
+    <tr ng-if="project.status == 'green'" class="success">
+        <td>Status</td>
+        <td>Green</td>
+    </tr>
+    <tr ng-if="project.status == 'red'" class="warning">
+        <td>Status</td>
+        <td>Red</td>
+    </tr>
+    <tr ng-if="project.status != 'red' && project.status != 'green'">
+        <td>Status</td>
+        <td>None</td>
+    </tr>
     <tr>
         <td>CI</td>
-        <td ng-if="project.ciExists">
+        <td ng-if="project.ep_metrics.ciExists">
             <i class="mdi-action-done icon-material-teal" />
         </td>
-        <td ng-if="!project.ciExists">None</td>
+        <td ng-if="!project.ep_metrics">None</td>
     </tr>
     <tr>
         <td>CI Status</td>
-        <td>{{ project.status }}</td>
+        <td>{{ project.ep_metrics.buildStatus }}</td>
     </tr>
     <tr>
-        <td>Build Time (min)</td>
-        <td ng-if="!project.ciExists">None</td>
-        <td ng-if="project.buildTime < 4">{{ project.buildTime }} <i class="mdi-action-trending-up icon-material-teal" /></td>
-        <td ng-if="project.buildTime >= 4">{{ project.buildTime }} <i class="mdi-action-trending-down icon-material-red" /></td>
+        <td>Build Time (MM:SS)</td>
+        <td ng-if="!project.ep_metrics.ciExists">None</td>
+        <td ng-if="project.ep_metrics.ciExists">{{ project.ep_metrics.buildTime }}</td>
     </tr>
     <tr>
         <td>Unit Tests (%)</td>
-        <td ng-if="project.unitTestsCoverage >= 80">{{ project.unitTestsCoverage }} <i class="mdi-action-trending-up icon-material-teal" /></td>
-        <td ng-if="project.unitTestsCoverage < 80">{{ project.unitTestsCoverage }} <i class="mdi-action-trending-down icon-material-red" /></td>
+        <td ng-if="project.ep_metrics.unitTestsCoverage >= 80">{{ project.ep_metrics.unitTestsCoverage }} <i class="mdi-action-trending-up icon-material-teal" /></td>
+        <td ng-if="project.ep_metrics.unitTestsCoverage < 80">{{ project.ep_metrics.unitTestsCoverage }} <i class="mdi-action-trending-down icon-material-red" /></td>
+    </tr>
+    <tr>
+        <td>Critical Code Violations</td>
+        <td ng-if="project.ep_metrics.criticalCodeViolations == 0">{{ project.ep_metrics.criticalCodeViolations }} <i class="mdi-action-trending-up icon-material-teal" /></td>
+        <td ng-if="project.ep_metrics.criticalCodeViolations > 0">{{ project.ep_metrics.criticalCodeViolations }}<i class="mdi-action-trending-down icon-material-red" /></td>
     </tr>
     <tr>
         <td>Num. Locations</td>
-        <td>{{ project.numLocations }}</td>
+        <td>{{ project.ep_metrics.numLocations }}</td>
     </tr>
     </tbody>
 </table>
