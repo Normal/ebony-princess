@@ -57,11 +57,11 @@ class ProjectService {
                         ],
                         ep_metrics: [
                                 ciExists: true,
-                                buildTime: '00:10', // 30%
-                                unitTestsCoverage: 80,
+                                buildTime: '1:15'.randomizeBuildDate(),
+                                unitTestsCoverage: 70,
                                 buildStatus: true.randomizeWithProbability(10),
-                                numLocations: 1,
-                                criticalCodeViolations: 0 //  +/- 2
+                                numLocations: 3,
+                                criticalCodeViolations: 0.randomizeViolations(2)
                         ]
                 ],
                 [
@@ -90,11 +90,11 @@ class ProjectService {
                         ],
                         ep_metrics: [
                                 ciExists: true,
-                                buildTime: '00:10', // 30%
+                                buildTime: '00:10'.randomizeBuildDate(),
                                 unitTestsCoverage: 80,
                                 buildStatus: true.randomizeWithProbability(10),
-                                numLocations: 1,
-                                criticalCodeViolations: 0 //  +/- 2
+                                numLocations: 3,
+                                criticalCodeViolations: 0.randomizeViolations(2)
                         ]
                 ]
         ].find { it.code == code }

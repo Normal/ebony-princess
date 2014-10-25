@@ -20,5 +20,31 @@ class Application {
                 def random = new Random()
                 random.nextInt(99) < prob ? random.nextBoolean() : delegate
         }
+
+        Integer.metaClass.randomizeViolations << {
+            int changer ->
+                def random = new Random()
+                delegate += random.nextInt(changer*2) - changer
+                Math.abs(delegate)
+        }
+
+        String.metaClass.randomizeBuildDate << {
+            def validate = {
+                val, max ->
+                    if(val >= max)
+                        val = max-1
+                    if(val < 10)
+                        val = "0" + val
+                    val
+            }
+
+            def (min, sec) = (delegate as String).split(":").collect({Integer.parseInt(it)})
+            sec = sec.randomizeViolations(15)
+            min = min.randomizeViolations(1)
+
+            sec = validate(sec, 60)
+            min = validate(min, 24)
+            min+':'+sec
+        }
     }
 }

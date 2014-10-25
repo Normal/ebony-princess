@@ -20,4 +20,15 @@ class ApplicationTests {
         println false.randomizeWithProbability(10)
     }
 
+    @Test
+    void randomizeViolationsTest() {
+        println 15.randomizeViolations(2)
+    }
+
+    @Test
+    void randomizeBuildDate() {
+        for(int i=0; i<15; i++) {
+            println "21:57".randomizeBuildDate()
+        }
+    }
 }
