@@ -14,7 +14,7 @@ class ProjectService {
     def getAll() {
         [
                 [
-                        status: 'green',
+                        status: 'red',
                         code: 'VTB24',
                         lat: 55.7592794,
                         lng: 37.629595
