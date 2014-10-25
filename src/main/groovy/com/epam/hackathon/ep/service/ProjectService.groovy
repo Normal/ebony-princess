@@ -41,6 +41,51 @@ class ProjectService {
                                         lng: 37.5443201,
                                         num: 100,
                                         name: 'spb'
+                                ],
+                                [
+                                        lat: 53.7876357,
+                                        lng: 30.0768751,
+                                        nam: 30,
+                                        name: 'Магілёў'
+                                ],
+                                [
+                                        lat: 47.5400415,
+                                        lng: 19.1633755,
+                                        nam: 15,
+                                        name: 'Budapest'
+                                ]
+                        ],
+                        ep_metrics: [
+                                ciExists: true,
+                                buildTime: '00:10', // 30%
+                                unitTestsCoverage: 80,
+                                buildStatus: true.randomizeWithProbability(10),
+                                numLocations: 1,
+                                criticalCodeViolations: 0 //  +/- 2
+                        ]
+                ],
+                [
+                        status: 'red',
+                        name: 'ВТБ',
+                        code: 'ВТБ',
+                        employers_locations: [
+                                [
+                                        lat: 53.38704,
+                                        lng: 49.9861132,
+                                        num: 20,
+                                        name: 'Тольятти'
+                                ],
+                                [
+                                        lat: 54.6156309,
+                                        lng: 39.7386032,
+                                        nam: 20,
+                                        name: 'Рязань'
+                                ],
+                                [
+                                        lat: 50.3413413,
+                                        lng: 30.5129543,
+                                        nam: 15,
+                                        name: 'Київ'
                                 ]
                         ],
                         ep_metrics: [
