@@ -77,17 +77,21 @@
   <div class="metrics-board-wrapper">
       <table id="metrics-board" class="table table-striped table-hover">
           <tbody>
+          <tr>
+              <td>Name</td>
+              <td>{{ project.name }}</td>
+          </tr>
           <tr ng-if="project.status == 'green'" class="success">
               <td>Status</td>
               <td>Green</td>
           </tr>
-          <tr ng-if="project.status == 'red'" class="warning">
+          <tr ng-if="project.status == 'red'" class="danger">
               <td>Status</td>
               <td>Red</td>
           </tr>
           <tr ng-if="project.status != 'red' && project.status != 'green'">
               <td>Status</td>
-              <td>None</td>
+              <td>No info</td>
           </tr>
           <tr>
               <td>CI</td>

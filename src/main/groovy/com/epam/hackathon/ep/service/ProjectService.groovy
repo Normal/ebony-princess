@@ -58,7 +58,7 @@ class ProjectService {
                         ep_metrics: [
                                 ciExists: true,
                                 buildTime: '1:15'.randomizeBuildDate(),
-                                unitTestsCoverage: 70,
+                                unitTestsCoverage: 80,
                                 buildStatus: true.randomizeWithProbability(10),
                                 numLocations: 3,
                                 criticalCodeViolations: 0.randomizeViolations(2)
@@ -90,8 +90,8 @@ class ProjectService {
                         ],
                         ep_metrics: [
                                 ciExists: true,
-                                buildTime: '00:10'.randomizeBuildDate(),
-                                unitTestsCoverage: 80,
+                                buildTime: '01:10'.randomizeBuildDate(),
+                                unitTestsCoverage: 18,
                                 buildStatus: true.randomizeWithProbability(10),
                                 numLocations: 3,
                                 criticalCodeViolations: 0.randomizeViolations(2)
