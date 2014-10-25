@@ -43,11 +43,11 @@ class ProjectService {
                         ],
                         ep_metrics: [
                                 ciExists: true,
-                                buildtime: '00:00:10',
-                                unitTestCoverage: '80',
+                                buildTime: '00:00:10',
+                                unitTestCoverage: 80,
                                 buildStatus: true,
                                 numLocations: 1,
-                                criticalCodeVialations: 0
+                                criticalCodeViolations: 0
                         ]
                 ]
         ].find {it.code == code}
