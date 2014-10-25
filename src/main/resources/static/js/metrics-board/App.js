@@ -1,1 +1,1 @@
-var metricsBoardApp = angular.module('metrics-board', []);
+var ebonyPrincessApp = angular.module('ebony-princess', []);

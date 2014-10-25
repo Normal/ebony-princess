@@ -1,5 +1,5 @@
 
-metricsBoardApp.controller('BoardController', function ($scope, $http) {
+ebonyPrincessApp.controller('BoardController', function ($scope, $http) {
 
     var greenProject = {
         status: 'green',
