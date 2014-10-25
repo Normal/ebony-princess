@@ -57,7 +57,7 @@ class ProjectService {
                                 [
                                         lat: 47.5400415,
                                         lng: 19.1633755,
-                                        nam: 15,
+                                        num: 15,
                                         name: 'Budapest'
                                 ]
                         ],
