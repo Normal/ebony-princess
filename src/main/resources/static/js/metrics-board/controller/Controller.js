@@ -46,7 +46,7 @@ function initialize() {
   });
 
     function setDeveloperLocation (developerLocation){
-        var myMarker1 = new google.maps.Marker({position: new google.maps.LatLng(developerLocation.lat, developerLocation.lng), map: map, title:developerLocation.name});
+        var myMarker1 = new google.maps.Marker({position: new google.maps.LatLng(developerLocation.lat, developerLocation.lng), map: map, title:developerLocation.code});
     }
 
     var showDeveloperLocations = function(data){
@@ -62,9 +62,9 @@ function initialize() {
   } else {
     icon = '/img/green__marker.png'
   }
-  var myMarker1 = new google.maps.Marker({position: new google.maps.LatLng(project.lat, project.lng), map: map,icon:icon, title:project.name});
+  var myMarker1 = new google.maps.Marker({position: new google.maps.LatLng(project.lat, project.lng), map: map,icon:icon, title:project.code});
   google.maps.event.addListener(myMarker1, 'click', function() {
-    $.get("/projects/"+project.name).success(showDeveloperLocations);
+    $.get("/projects/"+project.code).success(showDeveloperLocations);
   });
 }
 
@@ -75,9 +75,6 @@ function initialize() {
   })};
 
   $.get("/projects").success(showAllProjects);
-
-  var myMarker1 = new google.maps.Marker({position: new google.maps.LatLng(59.9160703, 30.3543856), map: map,title:"Hello World!"});
-  var myMarker1 = new google.maps.Marker({position: new google.maps.LatLng(53.9158179, 27.5930643), map: map, title:"Hello World!"});
 
   animateCircle();
 }

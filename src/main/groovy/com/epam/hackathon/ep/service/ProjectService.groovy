@@ -15,13 +15,13 @@ class ProjectService {
         [
                 [
                         status: 'green',
-                        name: 'ВТБ',
+                        code: 'VTB24',
                         lat: 55.7592794,
                         lng: 37.629595
                 ],
                 [
                         status: 'green',
-                        name: 'AstralJet',
+                        code: 'AstralJet',
                         lat: 55.6077115,
                         lng: 37.5443201
                 ]
@@ -67,7 +67,7 @@ class ProjectService {
                 [
                         status: 'red',
                         name: 'ВТБ',
-                        code: 'ВТБ',
+                        code: 'VTB24',
                         employers_locations: [
                                 [
                                         lat: 53.38704,
