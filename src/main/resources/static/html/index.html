@@ -98,11 +98,12 @@
               <td ng-if="project.ep_metrics.ciExists">
                   <i class="mdi-action-done icon-material-teal" />
               </td>
-              <td ng-if="!project.ep_metrics">None</td>
+              <td ng-if="!project.ep_metrics.ciExists">None</td>
           </tr>
           <tr>
               <td>CI Status</td>
-              <td>{{ project.ep_metrics.buildStatus }}</td>
+              <td ng-if="project.ep_metrics.buildStatus">Stable</td>
+              <td ng-if="!project.ep_metrics.buildStatus">Not verified</td>
           </tr>
           <tr>
               <td>Build Time (MM:SS)</td>

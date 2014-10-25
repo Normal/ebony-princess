@@ -43,10 +43,10 @@ class ProjectService {
                         code: 'AstralJet',
                         employers_locations: [
                                 [
-                                        lat: 55.6077115,
-                                        lng: 37.5443201,
+                                        lat: 59.9174455,
+                                        lng: 30.3250575,
                                         num: 100,
-                                        name: 'spb'
+                                        name: 'St.Petersburg'
                                 ],
                                 [
                                         lat: 53.7876357,
@@ -82,8 +82,8 @@ class ProjectService {
                                         name: 'Тольятти'
                                 ],
                                 [
-                                        lat: 55.6077115,
-                                        lng: 37.5443201,
+                                        lat: 59.9174455,
+                                        lng: 30.3250575,
                                         num: 100,
                                         name: 'St.Petersburg'
                                 ],
@@ -104,16 +104,16 @@ class ProjectService {
                         ]
                 ],
                 [
-                        status: 'gray',
+                        status: 'red',
                         name: 'Oakley',
                         code: 'Oakley',
                         employers_locations: [
                                 [
-                                        lat: 55.6077115,
-                                        lng: 37.5443201,
+                                        lat: 59.9174455,
+                                        lng: 30.3250575,
                                         num: 100,
                                         name: 'St.Petersburg'
-                                ]
+                                ],
                         ],
                         ep_metrics: [
                                 ciExists: false,
